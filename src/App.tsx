@@ -26,41 +26,27 @@ const App: React.FC = () => {
       {/* --- LEFT COLUMN: Content --- */}
       <div className="content-section">
         
-        {/* Logo Text Box */}
-        
         {/* Headline */}
         <h1 className="main-headline">
           Welcome to SAQ PAY <br />
-          
         </h1>
-
-        {/* Subheadline */}
         
+        {/* Amharic Text - Styled */}
+        <h2 className="amharic-text">በሳቅዎ ይክፈሉ</h2>
 
         {/* Blue Info Box */}
         <div className="info-box">
           <h3 className="info-box-title">Download the app now</h3>
           <p className="info-box-text">
-           
-          </p>
-        </div>
-
-        {/* Bottom CTA Text */}
-        <div className="cta-text-area">
           
-          <p className="cta-sub">
-           
           </p>
         </div>
 
         {/* Download Buttons */}
         <div className="download-section">
-          <p className="download-label"></p>
           <div className="store-buttons">
             
             {/* Google Play Button */}
-                        {/* Google Play Button */}
-                        {/* Google Play Button */}
             <button className="store-btn btn-box" onClick={handleGooglePlayClick}>
               <img 
                 src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" 
