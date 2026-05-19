@@ -1,0 +1,415 @@
+/* RESET & BASIC SETUP */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* Matches the purple-to-blue gradient background */
+  background: linear-gradient(135deg, #ffffff 0%, #9b797d 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* MAIN CONTAINER */
+.beijo-container {
+  display: flex;
+  
+  flex-wrap: wrap;
+  max-width: 1400px;
+  width: 100%;
+  padding: 40px;
+  /* Gradient similar to image (purple/blueish tint) */
+  
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* --- LEFT CONTENT --- */
+.content-section {
+  flex: 1;
+  min-width: 350px;
+  padding-right: 50px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* LOGO */
+.logo-area {
+  margin-bottom: 20px;
+}
+.logo-icon-placeholder {
+  display: inline-block;
+  padding: 10px 15px;
+  background: #fff;
+  border-radius: 10px;
+  border: 2px solid #a100f2;
+}
+.logo-text {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #f2a900;
+}
+
+/* HEADLINES */
+.main-headline {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.highlight-blue {
+  color: #4f8ed6;
+}
+
+.sub-text {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+  max-width: 600px;
+  margin-bottom: 30px;
+}
+
+/* BLUE INFO BOX */
+.info-box {
+  background-color: #5b8ed6; /* Matches the blue box */
+  color: white;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  max-width: 550px;
+}
+
+.info-box-title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.info-box-text {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+/* CTA TEXT AREA */
+.cta-text-area {
+  margin-bottom: 25px;
+}
+
+.cta-headline {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-style: italic;
+  color: #222;
+  margin-bottom: 5px;
+}
+
+.cta-sub {
+  color: #444;
+}
+
+/* DOWNLOAD BUTTONS */
+.download-label {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.store-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.store-btn {
+  background-color: #000;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  min-width: 150px;
+  transition: transform 0.2s ease;
+}
+
+.store-btn:hover {
+  transform: scale(1.05);
+}
+
+.btn-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.apple-icon, .play-icon {
+  font-size: 1.5rem;
+}
+
+.btn-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.small-text {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+}
+
+.big-text {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* --- RIGHT SECTION: MOCKUPS --- */
+.mockup-section {
+  flex: 1;
+  min-width: 300px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 50px;
+}
+
+.phone-mockup {
+  position: absolute ;
+  width: 240px;
+  border-radius: 30px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  border: 8px solid #ffffff; /* Phone bezel */
+  background: #000;
+  overflow: hidden;
+}
+
+.phone-mockup img {
+  width: 100%;
+  display: block;
+}
+
+/* Positioning the phones to look like the image */
+.phone-1 {
+  z-index: 2;
+  left: 10%;
+  top: 50px;
+  transform: rotate(-5deg);
+}
+
+.phone-2 {
+  z-index: 1;
+  right: 10%;
+  top: 0px;
+  transform: rotate(5deg);
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 900px) {
+  .beijo-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .content-section {
+    padding-right: 0;
+    align-items: center;
+    text-align: center;
+  }
+
+  .sub-text, .info-box {
+    max-width: 100%;
+  }
+
+  .store-buttons {
+    justify-content: center;
+  }
+
+  .mockup-section {
+    height: 400px;
+    margin-top: 40px;
+  }
+  
+  .phone-mockup {
+    width: 150px;
+  }
+  
+  .phone-1 {
+    left: 5%;
+    top: 50px;
+  }
+  
+  .phone-2 {
+    right: 5%;
+    top: 0;
+  }
+}
+/* --- MIDDLE IMAGE STYLES --- */
+.middle-image-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 30px 30px; /* Space above and below */
+}
+
+.image-wrapper {
+  max-width: 500px; /* Adjust width of the phone image */
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.center-image {
+  width: 100%;
+  height: auto;
+  display: block;
+} 
+/* --- SMALL LOGO ICON STYLES --- */
+.small-logo-container {
+  display: flex;
+  justify-content: flex-start; /* Aligns to the left */
+  margin-bottom: 15px; /* Space between logo and title */
+}
+
+.small-logo-icon {
+  width: 60px;  /* Adjust size as needed */
+  height: 60px;
+  border-radius: 12px; /* Optional: rounds the corners */
+  object-fit: contain;
+}
+/* --- FLOATING ANIMATION --- */
+@keyframes floatUpDown {
+  0% {
+    transform: translateY(0px) rotate(var(--rotation, 0deg));
+  }
+  50% {
+    transform: translateY(-20px) rotate(var(--rotation, 0deg));
+  }
+  100% {
+    transform: translateY(0px) rotate(var(--rotation, 0deg));
+  }
+}
+
+/* Update phone classes to include animation */
+.phone-mockup {
+  animation: floatUpDown 4s ease-in-out infinite;
+}
+
+.phone-1 {
+  --rotation: -5deg;
+}
+
+.phone-2 {
+  --rotation: 5deg;
+}
+/* --- GOOGLE PLAY IMAGE STYLES --- */
+.store-btn.google-play {
+  background-color: black;
+  padding: 0;
+  border: none;
+  height: auto;
+  display: inline-block;
+}
+
+.google-play-img {
+  height: 50px; /* Matches the height of the old text button */
+  width: auto;
+  display: block;
+}
+
+/* Keep the hover effect */
+.store-btn.google-play:hover {
+  transform: scale(1.05);
+}
+/* --- TEXT ANIMATIONS --- */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Apply animations to specific elements */
+.main-headline {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.sub-text {
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 0.2s;
+  opacity: 0; /* Hidden until animation starts */
+}
+
+.info-box {
+  animation: fadeInLeft 1s ease-out forwards;
+  animation-delay: 0.4s;
+  opacity: 0;
+}
+
+.cta-text-area {
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 0.6s;
+  opacity: 0;
+}
+
+.download-section {
+  animation: fadeInScale 1s ease-out forwards;
+  animation-delay: 0.8s;
+  opacity: 0;
+}
+
+/* Optional: Add delay to middle image */
+.middle-image-section {
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+
+/* Optional: Add delay to small logo */
+.small-logo-container {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* --- ADD THIS TO YOUR EXISTING CSS --- */
+/* Ensure elements are hidden initially if they have animation delay */
+.main-headline, .sub-text, .info-box, .cta-text-area, .download-section, .middle-image-section {
+  opacity: 0; /* Hide initially */
+}
