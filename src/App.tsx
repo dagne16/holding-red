@@ -49,7 +49,7 @@ const App: React.FC = () => {
 
         {/* Headline */}
         <h1 className="main-headline">
-          Welcome to SAQ MEDA, Your <br />
+          Welcome to SAQ PAY <br />
           <span className="highlight-blue">Trusted Partner</span>
         </h1>
 
@@ -120,11 +120,11 @@ const App: React.FC = () => {
               {/* --- RIGHT COLUMN: ANIMATED MOCKUPS --- */}
         <div className="mockup-section">
           <div className="phone-mockup phone-1">
-            <img src="saq2.webp" alt="App Mockup 1" />
+            <img src="ui1.jpg" alt="App Mockup 1" />
           </div>
           {/* ADD THIS STYLE PROP TO PHONE-2 */}
           <div className="phone-mockup phone-2" style={{ animationDelay: '1.5s' }}>
-            <img src="saq meda.png" alt="App Mockup 2" />
+            <img src="Ui2.jpg" alt="App Mockup 2" />
           </div>
         </div>
     </div>

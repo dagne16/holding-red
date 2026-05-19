@@ -413,3 +413,82 @@ body {
 .main-headline, .sub-text, .info-box, .cta-text-area, .download-section, .middle-image-section {
   opacity: 0; /* Hide initially */
 }
+/* --- EQUAL SIZE BUTTONS --- */
+.store-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  align-items: center; /* Ensures both buttons align vertically */
+}
+
+/* Google Play Button */
+.store-btn.google-play-custom {
+  background-color: #000000;
+  border: 1px solid #555555;
+  border-radius: 8px;
+  padding: 6px 15px;
+  height: 55px;         /* FIXED HEIGHT - Same as App Store */
+  width: 180px;         /* FIXED WIDTH - Same as App Store */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+/* App Store Button */
+.store-btn.app-store {
+  background-color: #000000;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 15px;
+  height: 55px;         /* FIXED HEIGHT - Same as Google Play */
+  width: 180px;         /* FIXED WIDTH - Same as Google Play */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+/* Ensure hover effects are the same */
+.store-btn.google-play-custom:hover,
+.store-btn.app-store:hover {
+  transform: scale(1.05);
+}
+
+/* Google Play Image inside button */
+.store-btn.google-play-custom img {
+  height: 45px;  /* Adjust image size to fit inside button */
+  width: auto;
+  display: block;
+}
+
+/* App Store Content inside button */
+.btn-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.apple-icon {
+  font-size: 1.5rem;
+}
+
+.btn-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.2;
+}
+
+.small-text {
+  font-size: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.big-text {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
