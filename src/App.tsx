@@ -30,7 +30,11 @@ const App: React.FC = () => {
         <h1 className="main-headline">
           Welcome to SAQ PAY <br />
         </h1>
-        
+        <img 
+          src="/imagel.png" 
+          alt="SAQ PAY Image" 
+          className="content-image"
+        />
         {/* Amharic Text - Styled */}
         <h2 className="amharic-text">በሳቅዎ ይክፈሉ</h2>
 
