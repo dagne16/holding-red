@@ -18,7 +18,7 @@ body {
 .beijo-container {
   display: flex;
   flex-wrap: wrap;
-  max-width: 1600px; /* Wider for Boss PC */
+  max-width: 1600px;
   width: 100%;
   padding: 50px;
   background-color: #c92a2a;
@@ -35,7 +35,7 @@ body {
 
 @keyframes floatUpDown {
   0% { transform: translateY(0px) rotate(var(--rotation, 0deg)); }
-  50% { transform: translateY(-25px) rotate(var(--rotation, 0deg)); }
+  50% { transform: translateY(-20px) rotate(var(--rotation, 0deg)); }
   100% { transform: translateY(0px) rotate(var(--rotation, 0deg)); }
 }
 
@@ -48,7 +48,7 @@ body {
 }
 
 .small-logo-icon {
-  width: 80px; /* Bigger on Boss PC */
+  width: 80px;
   height: 80px;
   border-radius: 12px;
   object-fit: contain;
@@ -72,7 +72,7 @@ body {
 
 .logo-text {
   font-weight: 700;
-  font-size: 2rem; /* Bigger text */
+  font-size: 2rem;
   color: #f2a900;
 }
 
@@ -90,7 +90,7 @@ body {
 
 /* --- HEADLINES --- */
 .main-headline {
-  font-size: 3.5rem; /* Bigger for Boss PC */
+  font-size: 3.5rem;
   font-weight: 700;
   color: #111;
   line-height: 1.2;
@@ -103,7 +103,7 @@ body {
 }
 
 .sub-text {
-  font-size: 1.3rem; /* Bigger */
+  font-size: 1.3rem;
   color: #333;
   line-height: 1.6;
   max-width: 600px;
@@ -182,12 +182,11 @@ body {
 
 /* --- GOOGLE PLAY BUTTON --- */
 .store-btn.google-play-custom {
-  background-color: #000000;
-  border: 1px solid #555555;
-  border-radius: 8px;
-  padding: 8px 12px;
-  height: 60px; /* Taller for Boss PC */
-  width: 200px; /* Wider */
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  height: 60px;
+  width: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -196,8 +195,9 @@ body {
 }
 
 .google-play-img-btn {
-  height: 45px;
-  width: auto;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
 }
 
 /* --- APP STORE BUTTON --- */
@@ -206,8 +206,8 @@ body {
   border: none;
   border-radius: 8px;
   padding: 8px 20px;
-  height: 60px; /* Taller */
-  width: 200px; /* Wider */
+  height: 60px;
+  width: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -251,22 +251,24 @@ body {
 
 /* --- MOCKUPS (PHONES) --- */
 .mockup-section {
-  flex: 1.2; /* Gives more space to phones on Boss PC */
+  flex: 1.2;
   min-width: 300px;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 20px;
-  min-height: 600px; /* More height for bigger phones */
+  min-height: 600px;
+  /* PUSH PHONES SLIGHTLY TO THE LEFT ON PC */
+  padding-left: 50px; 
 }
 
 .phone-mockup {
   position: absolute;
-  width: 320px; /* BIGGER for Boss PC */
+  width: 320px;
   border-radius: 35px;
-  box-shadow: 0 25px 50px rgba(255, 255, 255, 0.4);
-  border: 8px solid #ffffff;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+  border: 8px solid #222;
   background: #000;
   overflow: hidden;
   animation: floatUpDown 4s ease-in-out infinite;
@@ -292,7 +294,7 @@ body {
   animation-delay: 1.5s;
 }
 
-/* --- RESPONSIVE FOR MOBILE & SMALL PC --- */
+/* --- RESPONSIVE FOR MOBILE --- */
 @media (max-width: 1100px) {
   .beijo-container {
     flex-direction: column;
@@ -312,22 +314,23 @@ body {
 
   .mockup-section {
     width: 100%;
-    height: 400px;
-    margin-top: 30px;
+    height: 450px; /* Increased height for bigger phones */
+    margin-top: 20px;
+    padding-left: 0; /* Reset left padding on mobile */
   }
 
   .phone-mockup {
-    width: 220px; /* Smaller on medium screens */
+    width: 220px; /* INCREASED SIZE on mobile */
   }
 
   .phone-1 {
     left: 10%;
-    top: 40px;
+    top: 60px; /* Moved down to avoid download buttons */
   }
 
   .phone-2 {
     right: 10%;
-    top: -10px;
+    top: 10px; /* Moved down to avoid download buttons */
   }
   
   .small-logo-container {
@@ -366,22 +369,22 @@ body {
   }
   
   .mockup-section {
-    height: 300px;
-    margin-top: 20px;
+    height: 350px;
+    margin-top: 10px;
   }
 
   .phone-mockup {
-    width: 140px;
+    width: 180px; /* EVEN BIGGER on small mobile */
   }
 
   .phone-1 {
     left: 5%;
-    top: 30px;
+    top: 50px;
   }
 
   .phone-2 {
     right: 5%;
-    top: -10px;
+    top: 10px;
   }
 
   .store-btn.google-play-custom,
