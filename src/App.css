@@ -1,31 +1,39 @@
-/* ===== RESET & BASIC SETUP ===== */
+/* ===== RESET & FULL SCREEN SETUP ===== */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-body {
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#root {
+  width: 100%;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #1a1a1a;
 }
 
-/* ===== MAIN CONTAINER ===== */
+/* ===== MAIN CONTAINER - FULL SCREEN ===== */
 .beijo-container {
   display: flex;
   flex-wrap: wrap;
-  max-width: 1400px;
   width: 100%;
+  min-height: 100vh;
   padding: 40px;
   background: linear-gradient(135deg, #c92a2a 0%, #e03131 50%, #c92a2a 100%);
-  min-height: 100vh;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  align-items: center;
+  justify-content: center;
 }
 
 /* ===== ANIMATIONS ===== */
@@ -41,7 +49,7 @@ body {
 
 @keyframes floatUpDown {
   0% { transform: translateY(0px) rotate(var(--rotation, 0deg)); }
-  50% { transform: translateY(-25px) rotate(var(--rotation, 0deg)); }
+  50% { transform: translateY(-20px) rotate(var(--rotation, 0deg)); }
   100% { transform: translateY(0px) rotate(var(--rotation, 0deg)); }
 }
 
@@ -51,12 +59,17 @@ body {
   100% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); }
 }
 
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
 /* ===== SMALL LOGO ===== */
 .small-logo-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
   width: 100%;
+  margin-bottom: 20px;
   animation: fadeInScale 0.8s ease-out forwards;
 }
 
@@ -65,19 +78,21 @@ body {
   height: 80px;
   border-radius: 16px;
   object-fit: contain;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-  transition: transform 0.3s ease;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
 }
 
 .small-logo-icon:hover {
   transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.4);
 }
 
 /* ===== CONTENT SECTION ===== */
 .content-section {
   flex: 1;
   min-width: 300px;
-  padding-right: 30px;
+  max-width: 600px;
+  padding: 20px;
   z-index: 2;
   display: flex;
   flex-direction: column;
@@ -87,60 +102,61 @@ body {
 
 /* ===== HEADLINES ===== */
 .main-headline {
-  font-size: 3.2rem;
+  font-size: 3.5rem;
   font-weight: 800;
   color: #ffffff;
-  line-height: 1.2;
+  line-height: 1.1;
   margin-bottom: 10px;
   animation: fadeInUp 0.8s ease-out forwards;
-  text-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  text-shadow: 0 4px 20px rgba(0,0,0,0.3);
 }
 
 .amharic-text {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: 700;
   color: #ffd700;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   animation: fadeInUp 1s ease-out forwards;
   animation-delay: 0.2s;
   opacity: 0;
-  text-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
+  text-shadow: 0 2px 15px rgba(255, 215, 0, 0.3);
 }
 
-/* ===== BLUE INFO BOX ===== */
+/* ===== INFO BOX ===== */
 .info-box {
-  background: linear-gradient(135deg, #4a8ed6, #3a7ec6);
+  background: linear-gradient(135deg, rgba(74, 142, 214, 0.95), rgba(58, 126, 198, 0.95));
   color: white;
   padding: 30px 35px;
-  border-radius: 16px;
-  margin-bottom: 30px;
+  border-radius: 20px;
+  margin-bottom: 25px;
   max-width: 500px;
   width: 100%;
   animation: fadeInUp 1s ease-out forwards;
   animation-delay: 0.4s;
   opacity: 0;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
 }
 
 .info-box-title {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   margin-bottom: 12px;
   font-weight: 700;
 }
 
 .info-box-text {
-  font-size: 1rem;
+  font-size: 1.05rem;
   line-height: 1.6;
   opacity: 0.95;
 }
 
 /* ===== DOWNLOAD BUTTONS ===== */
 .download-section {
+  width: 100%;
   animation: fadeInUp 1s ease-out forwards;
   animation-delay: 0.6s;
   opacity: 0;
-  width: 100%;
 }
 
 .store-buttons {
@@ -150,54 +166,89 @@ body {
 }
 
 .store-btn {
-  background: rgba(0,0,0,0.8);
-  border: 2px solid rgba(255,255,255,0.2);
-  border-radius: 12px;
-  padding: 8px 16px;
-  height: 60px;
-  width: 180px;
+  background: rgba(0,0,0,0.85);
+  border: 2px solid rgba(255,255,255,0.15);
+  border-radius: 14px;
+  padding: 10px 20px;
+  height: 65px;
+  width: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.store-btn::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255,215,0,0.1), transparent);
+  transition: all 0.5s ease;
+  transform: rotate(45deg);
+}
+
+.store-btn:hover::before {
+  left: 100%;
 }
 
 .store-btn:hover {
   transform: scale(1.05);
   border-color: #ffd700;
-  box-shadow: 0 0 30px rgba(255, 215, 0, 0.2);
+  box-shadow: 0 0 40px rgba(255, 215, 0, 0.2);
+}
+
+.store-btn:active {
+  transform: scale(0.95);
 }
 
 .store-btn-img {
-  height: 40px;
+  height: 45px;
   width: auto;
   display: block;
+  transition: transform 0.3s ease;
+}
+
+.store-btn:hover .store-btn-img {
+  transform: scale(1.05);
 }
 
 /* ===== PHONE MOCKUPS ===== */
 .mockup-section {
   flex: 1;
-  min-width: 280px;
+  min-width: 300px;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 550px;
-  margin-top: 20px;
+  min-height: 600px;
+  height: 100%;
+  animation: fadeInUp 1.2s ease-out forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
 }
 
 .phone-mockup {
   position: absolute;
-  width: 260px;
-  height: 520px;
-  border-radius: 35px;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+  width: 300px;
+  height: 600px;
+  border-radius: 40px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.5);
   border: 8px solid #1a1a1a;
   background: #000;
   overflow: hidden;
   animation: floatUpDown 5s ease-in-out infinite, pulseGlow 3s ease-in-out infinite;
+  transition: all 0.3s ease;
+}
+
+.phone-mockup:hover {
+  transform: scale(1.02) rotate(var(--rotation, 0deg));
 }
 
 .phone-mockup img {
@@ -209,96 +260,162 @@ body {
 
 .phone-1 {
   z-index: 2;
-  left: 5%;
-  top: 30px;
-  --rotation: -6deg;
+  left: 0%;
+  top: 20px;
+  --rotation: -8deg;
 }
 
 .phone-2 {
   z-index: 1;
-  right: 5%;
-  top: 30px;
-  --rotation: 6deg;
+  right: 0%;
+  top: 20px;
+  --rotation: 8deg;
   animation-delay: 1.5s;
 }
 
-/* ===== RESPONSIVE (MOBILE & TABLET) ===== */
-@media (max-width: 1024px) {
+/* ===== PC LAYOUT (DEFAULT) ===== */
+@media (min-width: 1025px) {
+  .beijo-container {
+    padding: 60px;
+    gap: 40px;
+  }
+  
+  .content-section {
+    padding-right: 40px;
+  }
+  
   .main-headline {
-    font-size: 2.8rem;
+    font-size: 4rem;
   }
   
   .amharic-text {
-    font-size: 2.2rem;
+    font-size: 3rem;
+  }
+  
+  .phone-mockup {
+    width: 320px;
+    height: 640px;
   }
 }
 
+/* ===== TABLET LAYOUT ===== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .beijo-container {
+    padding: 40px;
+  }
+  
+  .main-headline {
+    font-size: 3rem;
+  }
+  
+  .amharic-text {
+    font-size: 2.5rem;
+  }
+  
+  .phone-mockup {
+    width: 240px;
+    height: 480px;
+  }
+  
+  .store-btn {
+    height: 58px;
+    width: 180px;
+  }
+  
+  .store-btn-img {
+    height: 38px;
+  }
+}
+
+/* ===== MOBILE LAYOUT ===== */
 @media (max-width: 768px) {
   .beijo-container {
     flex-direction: column;
-    padding: 25px;
-    align-items: center;
+    padding: 20px;
+    gap: 20px;
+    min-height: 100vh;
+    justify-content: flex-start;
   }
 
   .content-section {
-    padding-right: 0;
+    padding: 0;
     align-items: center;
     text-align: center;
     width: 100%;
+    max-width: 100%;
   }
 
   .main-headline {
     font-size: 2.2rem;
+    text-align: center;
   }
 
   .amharic-text {
     font-size: 1.8rem;
+    text-align: center;
   }
 
   .info-box {
     max-width: 100%;
-    padding: 25px;
+    padding: 20px 25px;
+    text-align: center;
+  }
+
+  .info-box-title {
+    font-size: 1.2rem;
+  }
+
+  .info-box-text {
+    font-size: 0.95rem;
   }
 
   .store-buttons {
     justify-content: center;
     gap: 12px;
+    width: 100%;
   }
 
   .store-btn {
-    height: 50px;
-    width: 150px;
-    padding: 6px 12px;
+    height: 55px;
+    width: 160px;
+    padding: 8px 15px;
   }
 
   .store-btn-img {
-    height: 32px;
+    height: 35px;
   }
 
   .mockup-section {
     width: 100%;
-    min-height: 400px;
-    margin-top: 40px;
+    min-height: 380px;
+    height: 380px;
+    margin-top: 20px;
   }
 
   .phone-mockup {
-    width: 180px;
-    height: 360px;
+    width: 160px;
+    height: 320px;
     border-width: 6px;
+    border-radius: 28px;
   }
 
   .phone-1 {
     left: 5%;
-    top: 20px;
+    top: 10px;
   }
 
   .phone-2 {
     right: 5%;
-    top: 20px;
+    top: 10px;
   }
 }
 
+/* ===== SMALL MOBILE ===== */
 @media (max-width: 480px) {
+  .beijo-container {
+    padding: 15px;
+  }
+
   .main-headline {
     font-size: 1.8rem;
   }
@@ -307,37 +424,79 @@ body {
     font-size: 1.5rem;
   }
 
+  .info-box {
+    padding: 15px 20px;
+  }
+
   .info-box-title {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .info-box-text {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 
   .store-btn {
-    height: 44px;
-    width: 130px;
-    padding: 4px 10px;
+    height: 48px;
+    width: 140px;
+    padding: 6px 12px;
+    border-radius: 10px;
   }
 
   .store-btn-img {
-    height: 28px;
+    height: 30px;
+  }
+
+  .mockup-section {
+    min-height: 300px;
+    height: 300px;
   }
 
   .phone-mockup {
-    width: 140px;
-    height: 280px;
+    width: 130px;
+    height: 260px;
     border-width: 5px;
+    border-radius: 22px;
   }
 
   .phone-1 {
     left: 2%;
-    top: 15px;
+    top: 5px;
   }
 
   .phone-2 {
     right: 2%;
-    top: 15px;
+    top: 5px;
+  }
+
+  .small-logo-icon {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/* ===== EXTRA SMALL ===== */
+@media (max-width: 380px) {
+  .main-headline {
+    font-size: 1.5rem;
+  }
+  
+  .amharic-text {
+    font-size: 1.3rem;
+  }
+  
+  .store-btn {
+    height: 42px;
+    width: 120px;
+    padding: 4px 10px;
+  }
+  
+  .store-btn-img {
+    height: 25px;
+  }
+  
+  .phone-mockup {
+    width: 110px;
+    height: 220px;
   }
 }
