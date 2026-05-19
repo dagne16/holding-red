@@ -59,25 +59,22 @@ const App: React.FC = () => {
           <div className="store-buttons">
             
             {/* Google Play Button */}
-            <button className="store-btn google-play-custom" onClick={handleGooglePlayClick}>
+                        {/* Google Play Button */}
+                        {/* Google Play Button */}
+            <button className="store-btn btn-box" onClick={handleGooglePlayClick}>
               <img 
                 src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" 
                 alt="Get it on Google Play" 
-                className="google-play-img-btn"
+                className="store-btn-img"
               />
             </button>
 
             {/* App Store Button */}
-                        {/* App Store Button - Now using IMAGE like Google Play */}
-            <button 
-              className="store-btn app-store-custom" 
-              onClick={handleAppStoreClick}
-              aria-label="Download on the App Store"
-            >
+            <button className="store-btn btn-box" onClick={handleAppStoreClick}>
               <img 
                 src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" 
                 alt="Download on the App Store" 
-                className="app-store-img-btn"
+                className="store-btn-img"
               />
             </button>
 
