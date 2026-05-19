@@ -11,16 +11,17 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #c92a2a;
 }
 
 /* --- MAIN CONTAINER --- */
 .beijo-container {
   display: flex;
-  flex-wrap: wrap; /* Allows wrapping on mobile */
-  max-width: 1400px;
+  flex-wrap: wrap;
+  max-width: 1600px; /* Wider for Boss PC */
   width: 100%;
-  padding: 40px;
-  background-color: #c92a2a; /* Red background */
+  padding: 50px;
+  background-color: #c92a2a;
   min-height: 100vh;
   position: relative;
   overflow: hidden;
@@ -34,21 +35,21 @@ body {
 
 @keyframes floatUpDown {
   0% { transform: translateY(0px) rotate(var(--rotation, 0deg)); }
-  50% { transform: translateY(-20px) rotate(var(--rotation, 0deg)); }
+  50% { transform: translateY(-25px) rotate(var(--rotation, 0deg)); }
   100% { transform: translateY(0px) rotate(var(--rotation, 0deg)); }
 }
 
 /* --- SMALL LOGO --- */
 .small-logo-container {
   display: flex;
-  justify-content: center;
-  margin-bottom: 10px;
+  justify-content: flex-start;
+  margin-bottom: 15px;
   width: 100%;
 }
 
 .small-logo-icon {
-  width: 60px;
-  height: 60px;
+  width: 80px; /* Bigger on Boss PC */
+  height: 80px;
   border-radius: 12px;
   object-fit: contain;
 }
@@ -56,14 +57,14 @@ body {
 /* --- LOGO TEXT BOX --- */
 .logo-area {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .logo-icon-placeholder {
   display: inline-block;
-  padding: 10px 30px;
+  padding: 12px 35px;
   background: #fff;
   border-radius: 12px;
   border: 3px solid #f2a900;
@@ -71,29 +72,29 @@ body {
 
 .logo-text {
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 2rem; /* Bigger text */
   color: #f2a900;
 }
 
 /* --- CONTENT SECTION --- */
 .content-section {
   flex: 1;
-  min-width: 300px;
-  padding-right: 20px;
+  min-width: 400px;
+  padding-right: 40px;
   z-index: 2;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centers text on mobile */
-  text-align: center;
+  align-items: flex-start;
+  text-align: left;
 }
 
 /* --- HEADLINES --- */
 .main-headline {
-  font-size: 2.5rem;
+  font-size: 3.5rem; /* Bigger for Boss PC */
   font-weight: 700;
   color: #111;
   line-height: 1.2;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   animation: fadeInUp 0.8s ease-out forwards;
 }
 
@@ -102,11 +103,11 @@ body {
 }
 
 .sub-text {
-  font-size: 1.1rem;
+  font-size: 1.3rem; /* Bigger */
   color: #333;
   line-height: 1.6;
   max-width: 600px;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
   animation: fadeInUp 1s ease-out forwards;
   animation-delay: 0.2s;
   opacity: 0;
@@ -116,10 +117,10 @@ body {
 .info-box {
   background-color: #5b8ed6;
   color: white;
-  padding: 25px;
+  padding: 30px;
   border-radius: 12px;
-  margin-bottom: 30px;
-  max-width: 550px;
+  margin-bottom: 35px;
+  max-width: 600px;
   width: 100%;
   animation: fadeInUp 1s ease-out forwards;
   animation-delay: 0.4s;
@@ -127,27 +128,27 @@ body {
 }
 
 .info-box-title {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
+  font-size: 1.4rem;
+  margin-bottom: 12px;
   font-weight: 600;
 }
 
 .info-box-text {
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   line-height: 1.5;
   opacity: 0.9;
 }
 
 /* --- CTA TEXT --- */
 .cta-text-area {
-  margin-bottom: 25px;
+  margin-bottom: 30px;
   animation: fadeInUp 1s ease-out forwards;
   animation-delay: 0.6s;
   opacity: 0;
 }
 
 .cta-headline {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 700;
   font-style: italic;
   color: #111;
@@ -155,6 +156,7 @@ body {
 }
 
 .cta-sub {
+  font-size: 1.1rem;
   color: #333;
 }
 
@@ -167,14 +169,15 @@ body {
 
 .download-label {
   font-weight: 700;
-  margin-bottom: 10px;
+  font-size: 1.2rem;
+  margin-bottom: 12px;
 }
 
 .store-buttons {
   display: flex;
-  gap: 15px;
+  gap: 20px;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 /* --- GOOGLE PLAY BUTTON --- */
@@ -182,9 +185,9 @@ body {
   background-color: #000000;
   border: 1px solid #555555;
   border-radius: 8px;
-  padding: 5px 10px;
-  height: 50px;
-  width: 160px;
+  padding: 8px 12px;
+  height: 60px; /* Taller for Boss PC */
+  width: 200px; /* Wider */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -193,7 +196,7 @@ body {
 }
 
 .google-play-img-btn {
-  height: 40px;
+  height: 45px;
   width: auto;
 }
 
@@ -202,9 +205,9 @@ body {
   background-color: #000000;
   border: none;
   border-radius: 8px;
-  padding: 5px 15px;
-  height: 50px;
-  width: 160px;
+  padding: 8px 20px;
+  height: 60px; /* Taller */
+  width: 200px; /* Wider */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -219,11 +222,11 @@ body {
 .btn-content {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
 .apple-icon {
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: white;
 }
 
@@ -236,34 +239,34 @@ body {
 }
 
 .small-text {
-  font-size: 0.5rem;
+  font-size: 0.6rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 .big-text {
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   font-weight: 600;
 }
 
 /* --- MOCKUPS (PHONES) --- */
 .mockup-section {
-  flex: 1;
-  min-width: 250px;
+  flex: 1.2; /* Gives more space to phones on Boss PC */
+  min-width: 300px;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 40px;
-  min-height: 400px;
+  margin-top: 20px;
+  min-height: 600px; /* More height for bigger phones */
 }
 
 .phone-mockup {
   position: absolute;
-  width: 200px;
-  border-radius: 25px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-  border: 6px solid #222;
+  width: 320px; /* BIGGER for Boss PC */
+  border-radius: 35px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+  border: 8px solid #222;
   background: #000;
   overflow: hidden;
   animation: floatUpDown 4s ease-in-out infinite;
@@ -276,56 +279,104 @@ body {
 
 .phone-1 {
   z-index: 2;
-  left: 10%;
-  top: 20px;
+  left: 0%;
+  top: 60px;
   --rotation: -5deg;
 }
 
 .phone-2 {
   z-index: 1;
-  right: 10%;
+  right: 0%;
   top: -20px;
   --rotation: 5deg;
   animation-delay: 1.5s;
 }
 
-/* --- RESPONSIVE (MOBILE) --- */
-@media (max-width: 900px) {
+/* --- RESPONSIVE FOR MOBILE & SMALL PC --- */
+@media (max-width: 1100px) {
   .beijo-container {
     flex-direction: column;
-    padding: 20px;
+    padding: 30px;
   }
 
   .content-section {
     padding-right: 0;
     width: 100%;
+    align-items: center;
+    text-align: center;
   }
 
   .main-headline {
-    font-size: 2rem;
-  }
-
-  .sub-text {
-    font-size: 1rem;
-  }
-
-  .info-box {
-    padding: 20px;
+    font-size: 2.5rem;
   }
 
   .mockup-section {
     width: 100%;
-    height: 350px; /* Fixed height for phone area */
+    height: 400px;
+    margin-top: 30px;
+  }
+
+  .phone-mockup {
+    width: 220px; /* Smaller on medium screens */
+  }
+
+  .phone-1 {
+    left: 10%;
+    top: 40px;
+  }
+
+  .phone-2 {
+    right: 10%;
+    top: -10px;
+  }
+  
+  .small-logo-container {
+    justify-content: center;
+  }
+  
+  .logo-area {
+    justify-content: center;
+  }
+  
+  .store-buttons {
+    justify-content: center;
+  }
+}
+
+/* --- PHONE SPECIFIC (Small Mobile) --- */
+@media (max-width: 600px) {
+  .main-headline {
+    font-size: 1.8rem;
+  }
+  
+  .sub-text {
+    font-size: 1rem;
+  }
+  
+  .info-box {
+    padding: 20px;
+  }
+  
+  .info-box-title {
+    font-size: 1.1rem;
+  }
+  
+  .cta-headline {
+    font-size: 1.3rem;
+  }
+  
+  .mockup-section {
+    height: 300px;
     margin-top: 20px;
   }
 
   .phone-mockup {
-    width: 150px;
+    width: 140px;
   }
 
   .phone-1 {
     left: 5%;
-    top: 20px;
+    top: 30px;
   }
 
   .phone-2 {
@@ -333,130 +384,30 @@ body {
     top: -10px;
   }
 
-  .store-buttons {
-    flex-direction: column; /* Stack buttons on small screens */
-    align-items: center;
-  }
-
   .store-btn.google-play-custom,
   .store-btn.app-store {
-    width: 200px; /* Wider buttons for easier tapping */
+    height: 50px;
+    width: 160px;
   }
-}
 
-@media (max-width: 480px) {
-  .main-headline {
+  .google-play-img-btn {
+    height: 35px;
+  }
+  
+  .apple-icon {
     font-size: 1.5rem;
   }
   
-  .phone-mockup {
-    width: 120px;
-  }
-}
-/* --- LARGER PHONE MOCKUPS & MOVED DOWN --- */
-.mockup-section {
-  flex: 1;
-  min-width: 250px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 80px; /* MOVED DOWN - increased from 40px */
-  min-height: 500px; /* INCREASED HEIGHT for bigger phones */
-}
-
-.phone-mockup {
-  position: absolute;
-  width: 280px; /* INCREASED SIZE - was 200px */
-  border-radius: 30px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-  border: 8px solid #222; /* Thicker border for bigger phones */
-  background: #000;
-  overflow: hidden;
-  animation: floatUpDown 4s ease-in-out infinite;
-}
-
-.phone-mockup img {
-  width: 100%;
-  display: block;
-}
-
-.phone-1 {
-  z-index: 2;
-  left: 5%;
-  top: 60px; /* MOVED DOWN - was 20px */
-  --rotation: -5deg;
-}
-
-.phone-2 {
-  z-index: 1;
-  right: 5%;
-  top: 0px; /* MOVED DOWN - was -20px */
-  --rotation: 5deg;
-  animation-delay: 1.5s;
-}
-
-/* --- MOBILE: BUTTONS SIDE-BY-SIDE --- */
-@media (max-width: 900px) {
-  /* Keep buttons side-by-side on mobile */
-  .store-buttons {
-    flex-direction: row !important; /* Forces side-by-side */
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-  }
-
-  .store-btn.google-play-custom,
-  .store-btn.app-store {
-    width: 140px; /* Smaller width to fit side-by-side */
-    height: 45px;
-  }
-
-  .google-play-img-btn {
-    height: 30px;
-  }
-
-  .small-text {
-    font-size: 0.45rem;
-  }
-
   .big-text {
-    font-size: 0.75rem;
-  }
-
-  /* Adjust phone size on mobile */
-  .phone-mockup {
-    width: 180px; /* Larger than before but fits mobile */
+    font-size: 0.9rem;
   }
   
-  .mockup-section {
-    min-height: 350px;
-    margin-top: 40px;
-  }
-
-  .phone-1 {
-    left: 5%;
-    top: 40px;
-  }
-
-  .phone-2 {
-    right: 5%;
-    top: 0px;
-  }
-}
-
-@media (max-width: 480px) {
-  .phone-mockup {
-    width: 140px;
+  .small-logo-icon {
+    width: 60px;
+    height: 60px;
   }
   
-  .store-btn.google-play-custom,
-  .store-btn.app-store {
-    width: 120px;
-    height: 40px;
-  }
-  
-  .google-play-img-btn {
-    height: 25px;
+  .logo-text {
+    font-size: 1.5rem;
   }
 }

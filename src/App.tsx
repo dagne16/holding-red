@@ -46,7 +46,7 @@ const App: React.FC = () => {
 
         {/* Blue Info Box */}
         <div className="info-box">
-          <h3 className="info-box-title">Why Choose SAQ MEDA?</h3>
+          <h3 className="info-box-title">Download the app now</h3>
           <p className="info-box-text">
            
           </p>
@@ -62,7 +62,7 @@ const App: React.FC = () => {
 
         {/* Download Buttons */}
         <div className="download-section">
-          <p className="download-label">Download the app now</p>
+          <p className="download-label"></p>
           <div className="store-buttons">
             
             {/* Google Play Button */}
