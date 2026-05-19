@@ -129,9 +129,8 @@ body {
 
 .info-box-title {
   font-size: 1.4rem;
-  
- 
-  font-style: bold italic;
+  margin-bottom: 12px;
+  font-weight: 600;
 }
 
 .info-box-text {
@@ -168,12 +167,6 @@ body {
   opacity: 0;
 }
 
-.download-label {
-  font-weight: 700;
-  font-size: 1.2rem;
-  margin-bottom: 12px;
-}
-
 .store-buttons {
   display: flex;
   gap: 20px;
@@ -181,13 +174,14 @@ body {
   justify-content: flex-start;
 }
 
-/* --- GOOGLE PLAY BUTTON --- */
-.store-btn.google-play-custom {
+/* --- BOTH BUTTONS - SAME STYLE --- */
+.store-btn.google-play-custom,
+.store-btn.app-store-custom {
   background-color: transparent;
   border: none;
   padding: 0;
   height: 60px;
-  width: 200px;
+  width: 180px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -195,59 +189,16 @@ body {
   transition: transform 0.2s ease;
 }
 
-.google-play-img-btn {
-  height: 100%;
-  width: 100%;
-  object-fit: contain;
-}
-
-/* --- APP STORE BUTTON --- */
-.store-btn.app-store {
-  background-color: #000000;
-  border: none;
-  border-radius: 8px;
-  padding: 8px 20px;
-  height: 60px;
-  width: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.store-btn:hover {
+.store-btn.google-play-custom:hover,
+.store-btn.app-store-custom:hover {
   transform: scale(1.05);
 }
 
-.btn-content {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.apple-icon {
-  font-size: 2rem;
-  color: white;
-}
-
-.btn-text {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  color: white;
-  line-height: 1.1;
-}
-
-.small-text {
-  font-size: 0.6rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.big-text {
-  font-size: 1.1rem;
-  font-weight: 600;
+.google-play-img-btn,
+.app-store-img-btn {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
 }
 
 /* --- MOCKUPS (PHONES) --- */
@@ -260,8 +211,7 @@ body {
   align-items: center;
   margin-top: 20px;
   min-height: 600px;
-  /* PUSH PHONES SLIGHTLY TO THE LEFT ON PC */
-  padding-left: 50px; 
+  padding-left: 50px;
 }
 
 .phone-mockup {
@@ -315,23 +265,23 @@ body {
 
   .mockup-section {
     width: 100%;
-    height: 450px; /* Increased height for bigger phones */
+    height: 450px;
     margin-top: 20px;
-    padding-left: 0; /* Reset left padding on mobile */
+    padding-left: 0;
   }
 
   .phone-mockup {
-    width: 220px; /* INCREASED SIZE on mobile */
+    width: 220px;
   }
 
   .phone-1 {
     left: 10%;
-    top: 60px; /* Moved down to avoid download buttons */
+    top: 60px;
   }
 
   .phone-2 {
     right: 10%;
-    top: 10px; /* Moved down to avoid download buttons */
+    top: 10px;
   }
   
   .small-logo-container {
@@ -375,7 +325,7 @@ body {
   }
 
   .phone-mockup {
-    width: 180px; /* EVEN BIGGER on small mobile */
+    width: 170px;
   }
 
   .phone-1 {
@@ -388,180 +338,25 @@ body {
     top: 10px;
   }
 
-  .store-btn.google-play-custom,
-  .store-btn.app-store {
-    height: 50px;
-    width: 160px;
-  }
-
-  .google-play-img-btn {
-    height: 35px;
-  }
-  
-  .apple-icon {
-    font-size: 1.5rem;
-  }
-  
-  .big-text {
-    font-size: 0.9rem;
-  }
-  
-  .small-logo-icon {
-    width: 60px;
-    height: 60px;
-  }
-  
-  .logo-text {
-    font-size: 1.5rem;
-  }
-}
-/* --- PHONE SPECIFIC (Small Mobile) --- */
-@media (max-width: 600px) {
-  .main-headline {
-    font-size: 1.8rem;
-  }
-  
-  .sub-text {
-    font-size: 1rem;
-  }
-  
-  .info-box {
-    padding: 20px;
-  }
-  
-  .info-box-title {
-    font-size: 1.1rem;
-  }
-  
-  .cta-headline {
-    font-size: 1.3rem;
-  }
-  
-  .mockup-section {
-    height: 350px;
-    margin-top: 10px;
-  }
-
-  .phone-mockup {
-    width: 180px;
-  }
-
-  .phone-1 {
-    left: 5%;
-    top: 50px;
-  }
-
-  .phone-2 {
-    right: 5%;
-    top: 10px;
-  }
-
-  /* --- FIXED: SAME SIZE & LARGER BUTTONS ON MOBILE --- */
-  .store-btn.google-play-custom,
-  .store-btn.app-store {
-    height: 60px !important;  /* LARGER height */
-    width: 200px !important;  /* LARGER width */
-    padding: 5px 10px !important;
-    display: flex !important;
-    align-items: center !important;
+  /* --- FIX: SAME SIZE BUTTONS SIDE BY SIDE --- */
+  .store-buttons {
+    flex-direction: row !important;  /* Forces side by side */
+    gap: 10px !important;
     justify-content: center !important;
+    width: 100% !important;
   }
 
-  .google-play-img-btn {
-    height: 45px !important;  /* LARGER image inside */
-    width: auto !important;
+  .store-btn.google-play-custom,
+  .store-btn.app-store-custom {
+    height: 50px !important;
+    width: 140px !important;  /* Smaller width to fit side by side */
+    padding: 0 !important;
   }
 
-  .apple-icon {
-    font-size: 1.8rem !important;
+  .google-play-img-btn,
+  .app-store-img-btn {
+    height: 100% !important;
+    width: 100% !important;
+    object-fit: contain !important;
   }
-  
-  .big-text {
-    font-size: 1rem !important;
-  }
-  
-  .small-text {
-    font-size: 0.55rem !important;
-  }
-  
-  .small-logo-icon {
-    width: 60px;
-    height: 60px;
-  }
-  
-  .logo-text {
-    font-size: 1.5rem;
-  }
-}
-/* --- STORE BUTTONS BASE STYLES --- */
-.store-btn.google-play-custom {
-  background-color: transparent;
-  border: none;
-  padding: 0;
-  height: 60px;
-  width: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.store-btn.app-store {
-  background-color: #000000;
-  border: none;
-  border-radius: 8px;
-  padding: 8px 20px;
-  height: 60px;
-  width: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.google-play-img-btn {
-  height: 100%;
-  width: 100%;
-  object-fit: contain;
-}
-
-.btn-content {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.apple-icon {
-  font-size: 2rem;
-  color: white;
-}
-
-.btn-text {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  color: white;
-  line-height: 1.1;
-}
-
-.small-text {
-  font-size: 0.6rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.big-text {
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
-/* --- FIX: ENSURE BOTH BUTTONS HAVE SAME BORDER RADIUS --- */
-.store-btn.app-store {
-  border-radius: 8px; /* Same as Google Play */
-}
-
-.store-btn.google-play-custom {
-  border-radius: 8px; /* Added for consistency */
 }
