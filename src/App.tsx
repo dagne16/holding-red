@@ -4,7 +4,7 @@ import './App.css';
 const App: React.FC = () => {
 
   const handleAppStoreClick = () => {
-    window.open('https://play.google.com/store/apps/details?id=com.saqpay.xhahu', '_blank');
+    window.open('https://apps.apple.com/rw/app/saqpay/id6762447527', '_blank');
   };
 
   const handleGooglePlayClick = () => {
