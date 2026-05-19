@@ -27,22 +27,15 @@ const App: React.FC = () => {
       <div className="content-section">
         
         {/* Logo Text Box */}
-        <div className="logo-area">
-          <div className="logo-icon-placeholder">
-            <span className="logo-text">SAQ PAY</span>
-          </div>
-        </div>
-
+        
         {/* Headline */}
         <h1 className="main-headline">
           Welcome to SAQ PAY <br />
-          <span className="highlight-blue">Trusted Partner</span>
+          
         </h1>
 
         {/* Subheadline */}
-        <p className="sub-text">
-          At SAQ MEDA,
-        </p>
+        
 
         {/* Blue Info Box */}
         <div className="info-box">
@@ -54,7 +47,7 @@ const App: React.FC = () => {
 
         {/* Bottom CTA Text */}
         <div className="cta-text-area">
-          <h3 className="cta-headline">Unlock Opportunities with SAQ MEDA Today!</h3>
+          
           <p className="cta-sub">
            
           </p>

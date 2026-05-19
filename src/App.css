@@ -129,8 +129,9 @@ body {
 
 .info-box-title {
   font-size: 1.4rem;
-  margin-bottom: 12px;
-  font-weight: 600;
+  
+ 
+  font-style: bold italic;
 }
 
 .info-box-text {
