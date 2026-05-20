@@ -24,11 +24,11 @@ const App: React.FC = () => {
 
         {/* Left column */}
         <div className="hero-content">
-          <span className="eyebrow">Mobile Payment App</span>
+          {/* <span className="eyebrow">Mobile Payment App</span> */}
 
           <h1 className="headline">
-            Pay with a{' '}
-            <span className="headline-accent">Smile</span>
+            በሳቅዎ{' '}
+            <span className="headline-accent">ይክፈሉ</span>
           </h1>
 
           <img
@@ -38,14 +38,14 @@ const App: React.FC = () => {
           />
 
           <p className="subheadline">
-            Fast, secure and effortless payments. Send money, pay bills,
-            and shop — all in one tap.
+            {/* Fast, secure and effortless payments. Send money, pay bills,
+            and shop — all in one tap. */}
           </p>
 
-          <p className="amharic">በሳቅዎ ይክፈሉ</p>
+          {/* <p className="amharic">በሳቅዎ ይክፈሉ</p> */}
 
           <div className="info-card">
-            <p className="info-card-title">Download the app now</p>
+            <p className="info-card-title">Download now</p>
           </div>
 
           <div className="store-buttons">
