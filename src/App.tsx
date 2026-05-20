@@ -2,87 +2,92 @@ import React from 'react';
 import './App.css';
 
 const App: React.FC = () => {
-
   const handleAppStoreClick = () => {
-    window.open('https://apps.apple.com/rw/app/saqpay/id6762447527', '_blank');
+    window.open('https://apps.apple.com/rw/app/saqpay/id6762447527', '_blank', 'noopener,noreferrer');
   };
 
   const handleGooglePlayClick = () => {
-    window.open('https://play.google.com/store/apps/details?id=com.saqpay.xhahu', '_blank');
+    window.open('https://play.google.com/store/apps/details?id=com.saqpay.xhahu', '_blank', 'noopener,noreferrer');
   };
 
   return (
-    <div className="beijo-container">
-      
-      {/* Small Logo Top Left */}
-      <div className="small-logo-container">
-        <img 
-          src="/logo-bg.png" 
-          alt="SAQ PAY Logo" 
-          className="small-logo-icon"
-        />
-      </div>
-      
-      {/* --- LEFT COLUMN: Content --- */}
-      <div className="content-section">
-        
-        {/* Headline */}
-        <h1 className="main-headline">
-          Welcome to SAQ PAY <br />
-        </h1>
-        <img 
-          src="/imagel.png" 
-          alt="SAQ PAY Image" 
-          className="content-image"
-        />
-        {/* Amharic Text - Styled */}
-        <h2 className="amharic-text">በሳቅዎ ይክፈሉ</h2>
+    <div className="page">
 
-        {/* Blue Info Box */}
-        <div className="info-box">
-          <h3 className="info-box-title">Download the app now</h3>
-          <p className="info-box-text">
-          
+      {/* ── Navbar ── */}
+      <nav className="navbar">
+        <img src="/logo-bg.png" alt="SAQ PAY" className="navbar-logo" />
+        <span className="navbar-brand">SAQ PAY</span>
+      </nav>
+
+      {/* ── Hero ── */}
+      <main className="hero">
+
+        {/* Left column */}
+        <div className="hero-content">
+          <span className="eyebrow">Mobile Payment App</span>
+
+          <h1 className="headline">
+            Pay with a{' '}
+            <span className="headline-accent">Smile</span>
+          </h1>
+
+          <img
+            src="/imagel.png"
+            alt="SAQ PAY"
+            className="hero-image"
+          />
+
+          <p className="subheadline">
+            Fast, secure and effortless payments. Send money, pay bills,
+            and shop — all in one tap.
           </p>
-        </div>
 
-        {/* Download Buttons */}
-        <div className="download-section">
+          <p className="amharic">በሳቅዎ ይክፈሉ</p>
+
+          <div className="info-card">
+            <p className="info-card-title">Download the app now</p>
+          </div>
+
           <div className="store-buttons">
-            
-            {/* Google Play Button */}
-            <button className="store-btn btn-box" onClick={handleGooglePlayClick}>
-              <img 
-                src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" 
-                alt="Get it on Google Play" 
+            <button
+              className="store-btn"
+              onClick={handleGooglePlayClick}
+              aria-label="Get it on Google Play"
+            >
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                alt="Get it on Google Play"
                 className="store-btn-img"
+                draggable={false}
               />
             </button>
 
-            {/* App Store Button */}
-            <button className="store-btn btn-box" onClick={handleAppStoreClick}>
-              <img 
-                src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" 
-                alt="Download on the App Store" 
+            <button
+              className="store-btn"
+              onClick={handleAppStoreClick}
+              aria-label="Download on the App Store"
+            >
+              <img
+                src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                alt="Download on the App Store"
                 className="store-btn-img"
+                draggable={false}
               />
             </button>
-
           </div>
         </div>
 
-      </div>
+        {/* Right column — phone mockups */}
+        <div className="mockups">
+          <div className="phone phone-left">
+            <img src="ui1.jpg" alt="SAQ PAY interface" />
+          </div>
+          <div className="phone phone-right">
+            <img src="Ui2.jpg" alt="SAQ PAY interface 2" />
+          </div>
+        </div>
 
-      {/* --- RIGHT COLUMN: ANIMATED MOCKUPS --- */}
-      <div className="mockup-section">
-        <div className="phone-mockup phone-1">
-          <img src="ui1.jpg" alt="App Mockup 1" />
-        </div>
-        <div className="phone-mockup phone-2" style={{ animationDelay: '1.5s' }}>
-          <img src="Ui2.jpg" alt="App Mockup 2" />
-        </div>
-      </div>
-      
+      </main>
     </div>
   );
 };
